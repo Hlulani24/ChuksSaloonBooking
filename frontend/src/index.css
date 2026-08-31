@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-noir text-cream font-body antialiased;
+}
+
+::selection {
+  background: #A8586B;
+  color: #F6F0EC;
+}
+
+:focus-visible {
+  outline: 2px solid #C9A66B;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded bg-mauve px-6 py-3 font-body font-semibold text-cream transition-colors hover:bg-mauveDark;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded border border-cream/30 px-6 py-3 font-body font-semibold text-cream transition-colors hover:border-champagne hover:text-champagne;
+}
+
+.input-field {
+  @apply w-full rounded border border-line bg-surface px-4 py-3 text-cream placeholder:text-cream/40 outline-none transition-colors focus:border-champagne;
+}
+
+.label-field {
+  @apply mb-1.5 block text-sm text-cream/70;
+}
