@@ -1,4 +1,4 @@
-# Chuks Hair & Beauty — Salon Booking Website
+# AMARA Hair & Beauty — Salon Booking Website
 
 The same booking-first logic as the restaurant build, adapted for a hair & beauty salon:
 customers browse **services** (not a food menu) and book an **appointment** (not a table),

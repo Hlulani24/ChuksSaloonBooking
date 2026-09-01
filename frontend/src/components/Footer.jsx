@@ -31,7 +31,7 @@ const Footer = () => (
         <h4 className="mb-3 font-display text-base">Visit</h4>
         <ul className="space-y-3 text-sm text-cream/60">
           <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-champagne" /> 45 Cape Vulture Road, Johannesburg</li>
-          <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-champagne" /> +27 60 861 8775</li>
+          <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-champagne" /> +27 65 376 4314</li>
           <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 shrink-0 text-champagne" /> malulekehlulani04@gmail.com</li>
         </ul>
       </div>

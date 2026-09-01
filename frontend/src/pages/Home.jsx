@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      <Hero />
+      <Hero featured={specials[0] || null} loading={loading} />
 
       <section className="container-page py-20">
         <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
