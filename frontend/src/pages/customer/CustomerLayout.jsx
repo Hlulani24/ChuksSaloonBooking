@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutGrid, CalendarClock, LogOut } from "lucide-react";
+import { LayoutGrid, CalendarClock, Settings, LogOut } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 const linkClass = ({ isActive }) =>
@@ -28,6 +28,9 @@ const CustomerLayout = () => {
           </NavLink>
           <NavLink to="/account/bookings" className={linkClass}>
             <CalendarClock size={17} /> My appointments
+          </NavLink>
+          <NavLink to="/account/settings" className={linkClass}>
+            <Settings size={17} /> Account settings
           </NavLink>
         </nav>
         <button onClick={handleLogout} className="mt-6 flex items-center gap-3 rounded px-4 py-2.5 text-sm font-medium text-cream/50 hover:text-mauve">

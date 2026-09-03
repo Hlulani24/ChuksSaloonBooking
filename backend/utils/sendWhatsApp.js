@@ -12,15 +12,21 @@ const buildWhatsAppLink = (phoneNumber, message) => {
   return `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
 };
 
-const bookingWhatsAppMessage = (booking) =>
-  `New AMARA appointment request:\n` +
-  `Name: ${booking.name}\n` +
-  `Date: ${booking.date} at ${booking.time}\n` +
-  (booking.stylist ? `Stylist: ${booking.stylist}\n` : "") +
-  (booking.services && booking.services.length ? `Services: ${booking.services.map((s) => s.name).join(", ")}\n` : "") +
-  `Phone: ${booking.phone}\n` +
-  (booking.notes ? `Notes: ${booking.notes}\n` : "") +
-  `Status: ${booking.status}`;
+const bookingWhatsAppMessage = (booking) => {
+  const total = (booking.services || []).reduce((sum, s) => sum + (s.price || 0), 0);
+  return (
+    `New AMARA appointment request:\n` +
+    `Name: ${booking.name}\n` +
+    `Date: ${booking.date} at ${booking.time}\n` +
+    (booking.stylist ? `Stylist: ${booking.stylist}\n` : "") +
+    (booking.services && booking.services.length
+      ? `Services: ${booking.services.map((s) => `${s.name} (R${s.price})`).join(", ")}\nTotal: R${total}\n`
+      : "No specific services requested yet\n") +
+    `Phone: ${booking.phone}\n` +
+    (booking.notes ? `Notes: ${booking.notes}\n` : "") +
+    `Status: ${booking.status}`
+  );
+};
 
 // Best-effort auto-send via Twilio. Silently skips if not configured.
 const trySendViaTwilio = async (toNumber, message) => {

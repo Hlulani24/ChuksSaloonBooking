@@ -33,19 +33,19 @@ const Register = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="label-field" htmlFor="name">Full name</label>
-            <input id="name" name="name" required className="input-field" value={form.name} onChange={handleChange} />
+            <input id="name" name="name" required placeholder="Full name" className="input-field" value={form.name} onChange={handleChange} />
           </div>
           <div>
             <label className="label-field" htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" required className="input-field" value={form.email} onChange={handleChange} />
+            <input id="email" name="email" type="email" required placeholder="you@example.com" className="input-field" value={form.email} onChange={handleChange} />
           </div>
           <div>
             <label className="label-field" htmlFor="phone">Phone</label>
-            <input id="phone" name="phone" className="input-field" value={form.phone} onChange={handleChange} />
+            <input id="phone" name="phone" placeholder="e.g. 0821234567" className="input-field" value={form.phone} onChange={handleChange} />
           </div>
           <div>
             <label className="label-field" htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" required minLength={6} className="input-field" value={form.password} onChange={handleChange} />
+            <input id="password" name="password" type="password" required minLength={6} placeholder="At least 6 characters" className="input-field" value={form.password} onChange={handleChange} />
           </div>
           {error && <p className="text-sm text-mauve">{error}</p>}
           <button type="submit" disabled={submitting} className="btn-primary w-full">

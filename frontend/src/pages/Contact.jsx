@@ -13,7 +13,7 @@ const Contact = () => (
         <Phone className="mt-0.5 text-champagne" size={22} />
         <div>
           <h3 className="font-display text-lg">Call us</h3>
-          <p className="mt-1 text-sm text-cream/60">+27 65 476 4314</p>
+          <p className="mt-1 text-sm text-cream/60">+27 65 376 4313</p>
         </div>
       </a>
       <a href="https://wa.me/27821234567" target="_blank" rel="noreferrer" className="flex items-start gap-4 rounded-lg border border-line bg-surface p-6 transition-colors hover:border-champagne">
@@ -34,7 +34,7 @@ const Contact = () => (
         <MapPin className="mt-0.5 text-champagne" size={22} />
         <div>
           <h3 className="font-display text-lg">Visit</h3>
-          <p className="mt-1 text-sm text-cream/60">45 Cape Vulture Road, Johannesburg</p>
+          <p className="mt-1 text-sm text-cream/60">45 Rivonia Road, Johannesburg</p>
         </div>
       </div>
     </div>

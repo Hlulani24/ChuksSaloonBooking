@@ -28,7 +28,7 @@ router.post("/", protect, restrictTo("admin"), upload.single("image"), async (re
       isSpecial: isSpecial === "true" || isSpecial === true,
       originalPrice: originalPrice || null,
       available: available === undefined ? true : available === "true" || available === true,
-      image: req.file ? `/uploads/services/${req.file.filename}` : "",
+      image: req.file ? (upload.usingCloudinary ? req.file.path : `/uploads/services/${req.file.filename}`) : "",
     });
     res.status(201).json(service);
   } catch (err) {
@@ -42,7 +42,7 @@ router.put("/:id", protect, restrictTo("admin"), upload.single("image"), async (
     const update = { ...req.body };
     if (update.isSpecial !== undefined) update.isSpecial = update.isSpecial === "true" || update.isSpecial === true;
     if (update.available !== undefined) update.available = update.available === "true" || update.available === true;
-    if (req.file) update.image = `/uploads/services/${req.file.filename}`;
+    if (req.file) update.image = upload.usingCloudinary ? req.file.path : `/uploads/services/${req.file.filename}`;
 
     const service = await Service.findByIdAndUpdate(req.params.id, update, {
       new: true,

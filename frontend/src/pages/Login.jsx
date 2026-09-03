@@ -31,12 +31,15 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="label-field" htmlFor="email">Email</label>
-            <input id="email" type="email" required className="input-field"
+            <input id="email" type="email" required placeholder="you@example.com" className="input-field"
               value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
           </div>
           <div>
-            <label className="label-field" htmlFor="password">Password</label>
-            <input id="password" type="password" required className="input-field"
+            <div className="mb-1.5 flex items-center justify-between">
+              <label className="label-field !mb-0" htmlFor="password">Password</label>
+              <Link to="/forgot-password" className="text-xs text-champagne hover:underline">Forgot password?</Link>
+            </div>
+            <input id="password" type="password" required placeholder="Your password" className="input-field"
               value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
           </div>
           {error && <p className="text-sm text-mauve">{error}</p>}

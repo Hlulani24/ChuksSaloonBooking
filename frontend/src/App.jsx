@@ -11,6 +11,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import EditProfile from "./pages/EditProfile";
 
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -34,6 +37,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
 
           <Route
             path="/admin"
@@ -46,6 +51,7 @@ function App() {
             <Route index element={<AdminDashboard />} />
             <Route path="services" element={<ManageServices />} />
             <Route path="bookings" element={<ManageBookings />} />
+            <Route path="settings" element={<EditProfile />} />
           </Route>
 
           <Route
@@ -58,6 +64,7 @@ function App() {
           >
             <Route index element={<CustomerDashboard />} />
             <Route path="bookings" element={<MyBookings />} />
+            <Route path="settings" element={<EditProfile />} />
           </Route>
 
           <Route path="*" element={<Home />} />

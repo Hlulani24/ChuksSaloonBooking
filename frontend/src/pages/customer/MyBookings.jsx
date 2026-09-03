@@ -34,7 +34,24 @@ const MyBookings = () => {
                 <span className={`rounded-full border px-3 py-1 text-xs capitalize ${statusColor[b.status]}`}>{b.status}</span>
               </div>
               {b.stylist && b.stylist !== "No preference" && <p className="mt-1 text-sm text-cream/50">Stylist: {b.stylist}</p>}
-              {b.services?.length > 0 && <p className="mt-1 text-sm text-cream/50">{b.services.map((s) => s.name).join(", ")}</p>}
+              {b.services?.length > 0 ? (
+                <div className="mt-3 border-t border-dashed border-line pt-3">
+                  {b.services.map((s, idx) => (
+                    <div key={idx} className="flex justify-between text-sm text-cream/70 gap-4 py-0.5">
+                      <span>{s.name}</span>
+                      <span className="font-mono shrink-0">R{Number(s.price).toFixed(2)}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between text-sm font-semibold text-cream mt-2 pt-2 border-t border-dashed border-line">
+                    <span>Total</span>
+                    <span className="font-mono text-champagne">
+                      R{b.services.reduce((sum, s) => sum + Number(s.price), 0).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-2 text-sm text-cream/40">No specific services selected — we'll confirm what's available.</p>
+              )}
               {b.notes && <p className="mt-2 text-sm text-cream/60">"{b.notes}"</p>}
             </div>
           ))}

@@ -74,14 +74,23 @@ const ManageBookings = () => {
                 {b.notes && <span className="text-cream/50">"{b.notes}"</span>}
               </div>
 
-              {b.services?.length > 0 && (
-                <ul className="mt-3 flex flex-wrap gap-2">
+              {b.services?.length > 0 ? (
+                <div className="mt-3 max-w-sm border-t border-dashed border-line pt-3">
                   {b.services.map((s, idx) => (
-                    <li key={idx} className="rounded-full border border-line px-3 py-1 text-xs text-cream/60">
-                      {s.name}
-                    </li>
+                    <div key={idx} className="flex justify-between text-sm text-cream/70 gap-4 py-0.5">
+                      <span>{s.name}</span>
+                      <span className="font-mono shrink-0">R{Number(s.price).toFixed(2)}</span>
+                    </div>
                   ))}
-                </ul>
+                  <div className="flex justify-between text-sm font-semibold text-cream mt-2 pt-2 border-t border-dashed border-line">
+                    <span>Total</span>
+                    <span className="font-mono text-champagne">
+                      R{b.services.reduce((sum, s) => sum + Number(s.price), 0).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-3 text-sm text-cream/40 italic">No specific services requested yet.</p>
               )}
 
               <div className="mt-4 flex flex-wrap items-center gap-2">

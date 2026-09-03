@@ -36,13 +36,20 @@ export const AuthProvider = ({ children }) => {
     return res.data.user;
   };
 
+  // Used after a password reset, which returns the same { token, user } shape
+  // as login/register but doesn't go through either of those endpoints.
+  const setSession = ({ token, user }) => {
+    localStorage.setItem("amara_token", token);
+    setUser(user);
+  };
+
   const logout = () => {
     localStorage.removeItem("amara_token");
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, setSession }}>
       {children}
     </AuthContext.Provider>
   );

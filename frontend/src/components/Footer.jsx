@@ -30,16 +30,16 @@ const Footer = () => (
       <div>
         <h4 className="mb-3 font-display text-base">Visit</h4>
         <ul className="space-y-3 text-sm text-cream/60">
-          <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-champagne" /> 45 Cape Vulture Road, Johannesburg</li>
-          <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-champagne" /> +27 65 376 4314</li>
-          <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 shrink-0 text-champagne" /> malulekehlulani04@gmail.com</li>
+          <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-champagne" /> 45 Rivonia Road, Johannesburg</li>
+          <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-champagne" /> +27 65 376 4313</li>
+          <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 shrink-0 text-champagne" /> malulekehlulani04@gmail.com.com</li>
         </ul>
       </div>
 
       <div>
         <h4 className="mb-3 font-display text-base">Hours</h4>
         <ul className="space-y-1.5 text-sm text-cream/60">
-          <li>Tue – Fri: 09:00 – 19:00</li>
+          <li>Mon – Fri: 09:00 – 19:00</li>
           <li>Sat: 08:00 – 17:00</li>
           <li>Sun – Mon: Closed</li>
         </ul>

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { LayoutGrid, Scissors, CalendarCheck, LogOut } from "lucide-react";
+import { LayoutGrid, Scissors, CalendarCheck, Settings, LogOut } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 const linkClass = ({ isActive }) =>
@@ -31,6 +31,9 @@ const AdminLayout = () => {
           </NavLink>
           <NavLink to="/admin/bookings" className={linkClass}>
             <CalendarCheck size={17} /> Appointments
+          </NavLink>
+          <NavLink to="/admin/settings" className={linkClass}>
+            <Settings size={17} /> Account settings
           </NavLink>
         </nav>
         <button onClick={handleLogout} className="mt-6 flex items-center gap-3 rounded px-4 py-2.5 text-sm font-medium text-cream/50 hover:text-mauve">

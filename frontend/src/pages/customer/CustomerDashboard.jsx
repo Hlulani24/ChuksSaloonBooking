@@ -38,6 +38,11 @@ const CustomerDashboard = () => {
                 <span className="rounded-full border border-champagne/40 px-3 py-1 text-xs capitalize text-champagne">{b.status}</span>
               </div>
               {b.stylist && b.stylist !== "No preference" && <p className="mt-1 text-sm text-cream/50">Stylist: {b.stylist}</p>}
+              {b.services?.length > 0 && (
+                <p className="mt-1 text-sm text-cream/50">
+                  {b.services.map((s) => s.name).join(", ")} · <span className="text-champagne">R{b.services.reduce((sum, s) => sum + Number(s.price), 0).toFixed(2)}</span>
+                </p>
+              )}
             </div>
           ))}
         </div>
